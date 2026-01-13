@@ -7,7 +7,7 @@ pipeline {
     WEB = "https://www.unismuh.ac.id"
    }
    
-   opsions {
+   options {
     disableConcureentBuilds()
     timeout(time: 10, unit: 'MINUTES')
    }
