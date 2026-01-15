@@ -7,9 +7,9 @@ pipeline {
     WEB = "https://www.unismuh.ac.id"
    }
 
-   triggers{
-    cron("*/5 * * * *")
-   }
+   //triggers{
+    //cron("*/5 * * * *")
+   //}
 
    parameters {
     string(name: 'Name', defaultValue: 'Guest', description: 'What is your name?')
@@ -105,6 +105,13 @@ pipeline {
         }
 
         stage('Deploy') {
+            input {
+                message "Can we deploy"
+                ok "Yes, of course"
+                submitter "nayol2627,loey"
+            }
+
+
              agent {
         node {
             label "Linux && java17"
