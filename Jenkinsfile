@@ -119,20 +119,20 @@ pipeline {
         }
     }
     stage("Release") {
-        when {
-            expression {
-                return params.DEPLOY 
-            }
+    when {
+        expression {
+            return params.Deploy
         }
-        agent {
+    }
+    agent {
         node {
             label "Linux && java17"
         }
     }
-            steps {
-                echo ('Release it')
-         }
-      }
+    steps {
+        echo 'Release it'
+    }
+}
             steps {
                 echo ('Hello Deploy 1')
                 sleep(5)
