@@ -118,7 +118,14 @@ pipeline {
             label "Linux && java17"
         }
     }
-    stage("Release") {
+            steps {
+                echo ('Hello Deploy 1')
+                sleep(5)
+                echo ('Hello Deploy 2')
+                echo ('Hello Deploy 3')
+            }
+        }
+        stage("Release") {
     when {
         expression {
             return params.Deploy
@@ -132,14 +139,6 @@ pipeline {
     steps {
         echo 'Release it'
     }
-}
-            steps {
-                echo ('Hello Deploy 1')
-                sleep(5)
-                echo ('Hello Deploy 2')
-                echo ('Hello Deploy 3')
-            }
-        }
     }
 
     post{
