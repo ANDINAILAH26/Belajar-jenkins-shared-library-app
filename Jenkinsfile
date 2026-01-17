@@ -1,3 +1,5 @@
 @Library("Belajar-Jenkins-Shared-Library@main") _
 
-mavenPipeline()
+nayolPipeline([
+    type: "wrong"
+])
